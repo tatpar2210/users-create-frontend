@@ -1,0 +1,38 @@
+@import "../../../../styles/global/variables";
+.preview-avatar {
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 6rem;
+    border-radius: 5rem;
+    box-shadow: 1px 1px 6px 2px #ccc;
+  }
+}
+
+image-cropper {
+  max-width: 600px;
+}
+
+.crop-options {
+  margin-top: 1rem;
+  padding: 0 0.3rem;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  button {
+    background-color: transparent;
+    margin-right: 0.5rem;
+    border: 0.02rem solid $font-color-1;
+    color: $font-color-1;
+    padding: 0.2rem 0.5rem;
+
+    &:hover {
+      color: white;
+      background-color: $font-color-1;
+    }
+  }
+}

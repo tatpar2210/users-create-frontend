@@ -1,0 +1,53 @@
+<div mat-dialog-content>
+  <div class="d-flex row">
+    <div class="col-md-3">
+      <h5 class="text-center">Preview</h5>
+      <div class="preview-avatar">
+        <img [src]="croppedImage" />
+      </div>
+    </div>
+
+    <div class="col-md-9 has-pre-vertical-divider mt-5 mt-md-0">
+      <image-cropper
+        #imageCropper
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="1 / 1"
+        [canvasRotation]="canvasRotation"
+        [transform]="transform"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded($event)"
+        (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()"
+        format="jpeg"
+      ></image-cropper>
+
+
+      <!-- <div class="crop-options d-flex justify-content-center">
+        <button type="button" (click)="rotateLeft()" title="Rotate Left">
+          <fa-icon [icon]="icons.rotateLeft"></fa-icon>
+        </button>
+
+        <button type="button" (click)="rotateRight()" title="Rotate Right">
+          <fa-icon [icon]="icons.rotateLeft" flip="horizontal"></fa-icon>
+        </button>
+
+        <button type="button" (click)="flipHorizontal()" title="Flip Horizontal">
+          <fa-icon [icon]="icons.flipH"></fa-icon>
+        </button>
+
+        <button type="button" (click)="flipVertical()" title="Flip Vertical">
+          <fa-icon [icon]="icons.flipH" [rotate]='90'></fa-icon>
+        </button>
+      </div> -->
+    </div>
+  </div>
+
+
+</div>
+<div mat-dialog-actions>
+  <div class="d-flex mt-3 justify-content-end w-100">
+    <button type="button" class="btn btn-outline-secondary theme-btn small-btn" (click)="close()">Cancel</button>
+    <button type="button" class="btn btn-primary theme-btn small-btn ml-3" (click)="submit()">Submit</button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <p class="salutation">Hi {{userData?.name}}</p>
+
+  <div *ngIf="userData?.status === 'Pending'" class="status-div">
+    <p>Oops! your profile activation is still pending :(</p>
+  </div>
+
+  <div *ngIf="userData?.status === 'Active'" class="status-div">
+    <p>Wooo! your profile activation has been successfully activated :)</p>
+  </div>
+
+  <div *ngIf="userData?.status === 'De-Active'" class="status-div">
+    <p>Oops! your profile is deactivated right now :(</p>
+  </div>
+</div>

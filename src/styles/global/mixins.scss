@@ -1,0 +1,311 @@
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet-medium {
+  @media (max-width: 950px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media (max-width: 540px) {
+    @content;
+  }
+}
+
+@mixin form-container {
+  width: 35%;
+
+  .form-wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-element {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      color: rgb(58, 76, 91);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 25px;
+      letter-spacing: 0.12em;
+    }
+
+    input {
+      margin-top: -5px;
+      border: 2px solid rgb(229, 233, 235);
+      height: 35px;
+      border-radius: 5px;
+      animation-delay: 4s;
+      -webkit-transition: 0.5s; /* Safari */
+      transition: 0.5s;
+      font-size: 16px;
+      padding-left: 5px;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    input:focus {
+      box-shadow: 0 0 1pt 1pt rgba(58, 76, 91, 0.5);
+      outline-width: 0px;
+    }
+  }
+  
+  .invalid-feedback-div {
+    span {
+      color: red;
+      font-size: 0.7rem;
+    }
+  }
+
+  .error_msg {
+    color: red;
+    text-align: center;
+  }
+
+  .form-extra-links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+
+    a, button {
+      color: rgb(93, 127, 242);
+      text-decoration: none;
+      outline: none;
+      border: none;
+      background-color: transparent;
+    }
+
+    a:hover, button:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include tablet {
+    width: 100%;
+  }
+}
+
+@mixin status-css {
+  div {
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+    border: 0;
+    width: 130px;
+    text-align: center;
+  }
+
+  .active {
+    background-color: #2e69b2;
+  }
+
+  .de-active {
+    background-color: #ea1e24;
+  }
+
+  .pending {
+    background-color: #f7981d;
+  }
+
+  .visiblity-none {
+    visibility: hidden;
+  }
+}
+
+@mixin btn-container {
+  display: flex;
+  justify-content: center;
+  button {
+    margin: 10px;
+    padding: 0 2rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    line-height: 2.5rem;
+    outline: none;
+    border: none;
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  .edit {
+    background: #f09000;
+    color: white;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  .save {
+    background-color: rgb(94, 128, 243);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .cancel {
+    background-color: transparent;
+    color: black;
+    text-transform: capitalize;
+  }
+}
+
+@mixin font-size-3 {
+  font-size: 3rem;
+
+  @include mobile {
+    font-size: 2.1rem;
+  }
+}
+
+@mixin font-size-2 {
+  font-size: 2.2rem;
+
+  @include mobile {
+    font-size: 1.8rem;
+  }
+}
+
+@mixin font-size-1 {
+  font-size: 1rem;
+
+  @include mobile {
+    font-size: 1rem;
+  }
+}
+
+@mixin card-background-pink {
+  background: linear-gradient(
+    270.79deg,
+    rgba(234, 30, 36, 0.85) 19.6%,
+    rgba(234, 30, 36, 0.5) 140.38%
+  );
+  color: white;
+}
+
+@mixin card-background-blue {
+  background: linear-gradient(
+    270deg,
+    #00589d 17.93%,
+    rgba(0, 88, 157, 0.5) 121.14%
+  );
+  color: white;
+}
+
+@mixin card-background-yellow {
+  background: linear-gradient(
+    270deg,
+    #f7981d 12.77%,
+    rgba(247, 152, 29, 0.5) 114.29%
+  );
+  color: white;
+}
+
+@mixin icon-background-pink {
+  background: rgb(221, 70, 74);
+  color: white;
+}
+
+@mixin icon-background-blue {
+  background: rgb(0, 91, 143);
+  color: white;
+}
+
+@mixin icon-background-yellow {
+  background: rgb(226, 139, 56);
+  color: white;
+}
+
+@mixin color-underline {
+  margin-top: 10px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #db1b07 0.57%,
+    #f7981d 51.13%,
+    #185ea5 99.43%
+  );
+  border-radius: 10px;
+}
+
+@mixin title-underline {
+  &:after {
+    border-radius: 4px;
+    border-bottom: 0.25rem solid;
+    content: "";
+    color: $warn-color;
+    left: 0;
+    width: 100px;
+    margin: 1rem 0;
+    display: block;
+  }
+  &.text-center {
+    &:after {
+      margin: 1rem auto;
+    }
+  }
+  @include desktop {
+    &.text-sm-left {
+      &:after {
+        margin: 1rem 0;
+      }
+    }
+  }
+}
+
+@mixin simple-underline {
+  &:after {
+    text-align: center;
+    content: "";
+    display: block;
+    width: 5rem;
+    margin: 0.4rem auto;
+    border-bottom: 0.15rem solid $border-color;
+  }
+}
+
+@mixin border-bottom {
+  border-bottom: 1px solid $border-color;
+}
+
+@mixin capitalize {
+  text-transform: capitalize;
+}

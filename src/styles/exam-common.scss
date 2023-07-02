@@ -1,0 +1,67 @@
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit  {
+  background-color: $primary-color;
+  color: #fff;
+  padding: 1rem;
+
+  @include mobile  {
+    padding: 0;
+  }
+
+  &:hover  {
+    background-color: $primary-hover-color;
+  }
+}
+
+.mat-step-header  {
+  .mat-step-icon  {
+    font-size: 0.8rem;
+  }
+}
+
+mat-horizontal-stepper  {
+  border-radius: 5px;
+}
+
+.mat-step  {
+  .mat-vertical-stepper-header  {
+    @include mobile  {
+      padding-left: 14px;
+    }
+  }
+  .mat-vertical-content-container  {
+    @include mobile  {
+      margin-left: 26px;
+    }
+  }
+}
+
+.mat-radio-container  {
+  @include mobile  {
+    height: 18px !important;
+    width: 18px !important;
+  }
+  .mat-radio-outer-circle, .mat-radio-inner-circle  {
+    @include mobile  {
+      height: 17px;
+      width: 17px;
+    }
+  }
+
+
+}
+
+.mat-radio-button:not(.mat-radio-disabled).cdk-program-focused  {
+  .mat-ripple-element.mat-radio-persistent-ripple  {
+    opacity: 0 !important;
+  }
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle  {
+  background-color: $warn-color;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle  {
+  border-color: $warn-color;
+}

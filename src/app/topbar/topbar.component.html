@@ -1,0 +1,20 @@
+<div class="topbar">
+
+  <div>
+    <button (click) ="dashboard()" class="nav-btn">Dashboard</button>
+  </div>
+
+  <div>
+    <img (click) = "onMenuClick()" class="profile_img" [src]="profileImagePath" />
+
+    <div *ngIf = "showMenu" class="dropdown-menu">
+      <button (click) = "openProfile()">View Profile</button>
+      <button (click) = "changePassword()">Change Password</button>
+
+      <hr />
+
+      <button (click) = "logOut()">LogOut</button>
+
+    </div>
+  </div>
+</div>
